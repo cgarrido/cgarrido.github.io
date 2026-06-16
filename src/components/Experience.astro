@@ -1,0 +1,50 @@
+---
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+---
+<section id="experience" class="py-24 bg-surface/30">
+  <div class="container">
+    <h2 class="section-title animate-in">
+      <span class="lang-en">{en.experience.title}</span>
+      <span class="lang-es">{es.experience.title}</span>
+    </h2>
+
+    <div class="timeline">
+      {en.experience.items.map((item, i) => (
+        <div class="timeline-item animate-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="text-xs font-mono text-accent bg-accent/10 px-2 py-1 rounded mb-3 inline-block">
+              <span class="lang-en">{en.experience.items[i].period}</span>
+              <span class="lang-es">{es.experience.items[i].period}</span>
+            </span>
+            <h3 class="text-text font-semibold text-lg">{item.company}</h3>
+            <p class="text-accent-light text-sm font-medium mb-3">
+              <span class="lang-en">{en.experience.items[i].role}</span>
+              <span class="lang-es">{es.experience.items[i].role}</span>
+            </p>
+            <p class="text-muted text-sm leading-relaxed mb-4">
+              <span class="lang-en">{en.experience.items[i].description}</span>
+              <span class="lang-es">{es.experience.items[i].description}</span>
+            </p>
+            <div class="flex flex-wrap gap-2">
+              {item.tags.map(tag => <span class="pill">{tag}</span>)}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline { position: relative; padding-left: 1.5rem; border-left: 2px solid var(--color-border); }
+  .timeline-item { position: relative; margin-bottom: 2.5rem; padding-left: 1.5rem; }
+  .timeline-dot {
+    position: absolute; left: -1.65rem; top: 0.35rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-bg), 0 0 0 5px var(--color-accent);
+  }
+  .timeline-content { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 0.75rem; padding: 1.25rem; }
+</style>

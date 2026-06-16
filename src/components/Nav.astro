@@ -1,0 +1,96 @@
+---
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+---
+<nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="container flex items-center justify-between h-16">
+    <a href="#hero" class="text-accent font-bold text-lg tracking-tight">CG</a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-6">
+      {(['about','experience','skills','certifications','contact'] as const).map(key => (
+        <a href={`#${key}`} class="text-muted hover:text-text text-sm font-medium transition-colors">
+          <span class="lang-en">{en.nav[key]}</span>
+          <span class="lang-es">{es.nav[key]}</span>
+        </a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-3">
+      <!-- Language toggle -->
+      <button id="lang-toggle" class="flex items-center gap-1 bg-surface border border-border rounded-full px-3 py-1 text-xs font-semibold">
+        <span id="lang-en-btn" class="text-accent">EN</span>
+        <span class="text-border">|</span>
+        <span id="lang-es-btn" class="text-muted">ES</span>
+      </button>
+
+      <!-- Hamburger (mobile) -->
+      <button id="hamburger" class="md:hidden text-muted">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+          <rect y="3" width="20" height="2" rx="1"/><rect y="9" width="20" height="2" rx="1"/><rect y="15" width="20" height="2" rx="1"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-border">
+    <div class="container py-4 flex flex-col gap-3">
+      {(['about','experience','skills','certifications','contact'] as const).map(key => (
+        <a href={`#${key}`} class="text-muted hover:text-text text-sm font-medium py-1 transition-colors mobile-link">
+          <span class="lang-en">{en.nav[key]}</span>
+          <span class="lang-es">{es.nav[key]}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<style>
+  nav.scrolled {
+    backdrop-filter: blur(12px);
+    background: rgba(10, 10, 15, 0.85);
+    border-bottom: 1px solid var(--color-border);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('lang-toggle');
+  const enBtn = document.getElementById('lang-en-btn');
+  const esBtn = document.getElementById('lang-es-btn');
+  const hamburger = document.getElementById('hamburger');
+  const menu = document.getElementById('mobile-menu');
+
+  function updateToggleUI(lang: string) {
+    if (lang === 'en') {
+      enBtn?.classList.remove('text-muted');
+      enBtn?.classList.add('text-accent');
+      esBtn?.classList.remove('text-accent');
+      esBtn?.classList.add('text-muted');
+    } else {
+      esBtn?.classList.remove('text-muted');
+      esBtn?.classList.add('text-accent');
+      enBtn?.classList.remove('text-accent');
+      enBtn?.classList.add('text-muted');
+    }
+  }
+
+  toggle?.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-lang') || 'en';
+    const next = current === 'en' ? 'es' : 'en';
+    document.documentElement.setAttribute('data-lang', next);
+    localStorage.setItem('lang', next);
+    updateToggleUI(next);
+  });
+
+  hamburger?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => menu?.classList.add('hidden'));
+  });
+
+  // Init UI
+  updateToggleUI(localStorage.getItem('lang') || 'en');
+</script>

@@ -1,0 +1,37 @@
+---
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+---
+<section id="about" class="py-24">
+  <div class="container">
+    <h2 class="section-title animate-in">
+      <span class="lang-en">{en.about.title}</span>
+      <span class="lang-es">{es.about.title}</span>
+    </h2>
+    <div class="max-w-2xl space-y-5">
+      {en.about.paragraphs.map((_, i) => (
+        <p class="text-muted leading-relaxed text-base animate-in">
+          <span class="lang-en">{en.about.paragraphs[i]}</span>
+          <span class="lang-es">{es.about.paragraphs[i]}</span>
+        </p>
+      ))}
+    </div>
+
+    <!-- Achievement highlight -->
+    <div class="mt-12 p-6 bg-surface border border-border rounded-xl max-w-2xl animate-in">
+      <div class="flex items-start gap-4">
+        <div class="text-3xl">🏆</div>
+        <div>
+          <p class="text-accent font-semibold mb-1">
+            <span class="lang-en">{en.achievement.name}</span>
+            <span class="lang-es">{es.achievement.name}</span>
+          </p>
+          <p class="text-muted text-sm leading-relaxed">
+            <span class="lang-en">{en.achievement.description}</span>
+            <span class="lang-es">{es.achievement.description}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

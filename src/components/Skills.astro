@@ -1,0 +1,31 @@
+---
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+---
+<section id="skills" class="py-24">
+  <div class="container">
+    <h2 class="section-title animate-in">
+      <span class="lang-en">{en.skills.title}</span>
+      <span class="lang-es">{es.skills.title}</span>
+    </h2>
+
+    <div class="space-y-8">
+      {en.skills.groups.map((group, i) => (
+        <div class="animate-in">
+          <h3 class="text-text font-semibold mb-3 text-sm uppercase tracking-widest">
+            <span class="lang-en">{en.skills.groups[i].label}</span>
+            <span class="lang-es">{es.skills.groups[i].label}</span>
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            {group.items.map((item, j) => (
+              <span class="pill">
+                <span class="lang-en">{en.skills.groups[i].items[j]}</span>
+                <span class="lang-es">{es.skills.groups[i].items[j]}</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

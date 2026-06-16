@@ -1,0 +1,42 @@
+---
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+---
+<section id="certifications" class="py-24 bg-surface/30">
+  <div class="container">
+    <h2 class="section-title animate-in">
+      <span class="lang-en">{en.certifications.title}</span>
+      <span class="lang-es">{es.certifications.title}</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {en.certifications.items.map((cert, i) => (
+        <div class="bg-surface border border-border rounded-xl p-5 animate-in hover:border-accent transition-colors">
+          <div class="w-8 h-8 rounded-lg bg-accent/10 flex items-center justify-center mb-3">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#6366f1" stroke-width="2">
+              <path d="M8 1l1.9 3.8 4.2.6-3 2.9.7 4.1L8 10.4l-3.8 2 .7-4.1-3-2.9 4.2-.6z"/>
+            </svg>
+          </div>
+          <p class="text-text font-semibold text-sm mb-1">{cert.name}</p>
+          <p class="text-muted text-xs">{cert.issuer} · {cert.year}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Education -->
+    <div class="mt-16 animate-in">
+      <h2 class="section-title">
+        <span class="lang-en">{en.education.title}</span>
+        <span class="lang-es">{es.education.title}</span>
+      </h2>
+      <div class="bg-surface border border-border rounded-xl p-6 max-w-md">
+        <p class="text-text font-semibold mb-1">
+          <span class="lang-en">{en.education.degree}</span>
+          <span class="lang-es">{es.education.degree}</span>
+        </p>
+        <p class="text-accent-light text-sm">{en.education.school}</p>
+        <p class="text-muted text-xs mt-1">{en.education.period}</p>
+      </div>
+    </div>
+  </div>
+</section>
