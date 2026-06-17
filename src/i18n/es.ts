@@ -115,7 +115,7 @@ export const es = {
   achievement: {
     title: "Logro destacado",
     name: "SpaceApps Challenge 2014 — Ganador NASA",
-    description: "Lideré un equipo de 9 personas construyendo una aplicación de predicción de incendios forestales en tiempo real usando fuentes de datos de puntos calientes, clima e índices de vegetación. Premiado por la NASA.",
+    description: "Integré un equipo de 9 personas que construyó una aplicación de predicción de incendios forestales en tiempo real usando fuentes de datos de puntos calientes, clima e índices de vegetación. Premiado por la NASA.",
   },
   education: {
     title: "Educación",

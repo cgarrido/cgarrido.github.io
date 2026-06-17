@@ -115,7 +115,7 @@ export const en = {
   achievement: {
     title: "Achievement",
     name: "SpaceApps Challenge 2014 — NASA Winner",
-    description: "Led a 9-member team building a real-time wildfire prediction application using hotspot data sources, weather feeds, and vegetation indices. Awarded by NASA.",
+    description: "Part of a 9-member team that built a real-time wildfire prediction application using hotspot data sources, weather feeds, and vegetation indices. Awarded by NASA.",
   },
   education: {
     title: "Education",
