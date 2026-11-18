@@ -27,6 +27,16 @@ import { es } from '../i18n/es';
               <span class="lang-en">{en.experience.items[i].description}</span>
               <span class="lang-es">{es.experience.items[i].description}</span>
             </p>
+            {item.bullets && (
+              <ul class="list-disc pl-5 mb-4 space-y-1.5 text-muted text-sm leading-relaxed">
+                {item.bullets.map((_, b) => (
+                  <li>
+                    <span class="lang-en">{en.experience.items[i].bullets?.[b]}</span>
+                    <span class="lang-es">{es.experience.items[i].bullets?.[b]}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
             <div class="flex flex-wrap gap-2">
               {item.tags.map(tag => <span class="pill">{tag}</span>)}
             </div>

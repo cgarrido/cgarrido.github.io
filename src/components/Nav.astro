@@ -10,7 +10,7 @@ import { es } from '../i18n/es';
 
     <!-- Desktop nav links -->
     <div class="hidden md:flex items-center gap-6">
-      {(['about','experience','skills','certifications','contact'] as const).map(key => (
+      {(['about','experience','projects','skills','certifications','contact'] as const).map(key => (
         <a href={`#${key}`} class="text-muted hover:text-text text-sm font-medium transition-colors">
           <span class="lang-en">{en.nav[key]}</span>
           <span class="lang-es">{es.nav[key]}</span>
@@ -38,7 +38,7 @@ import { es } from '../i18n/es';
   <!-- Mobile menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-border">
     <div class="container py-4 flex flex-col gap-3">
-      {(['about','experience','skills','certifications','contact'] as const).map(key => (
+      {(['about','experience','projects','skills','certifications','contact'] as const).map(key => (
         <a href={`#${key}`} class="text-muted hover:text-text text-sm font-medium py-1 transition-colors mobile-link">
           <span class="lang-en">{en.nav[key]}</span>
           <span class="lang-es">{es.nav[key]}</span>

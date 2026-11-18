@@ -1,0 +1,40 @@
+---
+import { en } from '../i18n/en';
+import { es } from '../i18n/es';
+---
+<section id="approach" class="py-24 bg-surface/30">
+  <div class="container">
+    <h2 class="section-title animate-in">
+      <span class="lang-en">{en.approach.title}</span>
+      <span class="lang-es">{es.approach.title}</span>
+    </h2>
+    <p class="text-muted text-sm mb-10 max-w-2xl animate-in">
+      <span class="lang-en">{en.approach.subtitle}</span>
+      <span class="lang-es">{es.approach.subtitle}</span>
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {en.approach.items.map((_, i) => (
+        <div class="approach-card animate-in">
+          <h3 class="text-text font-semibold mb-2">
+            <span class="lang-en">{en.approach.items[i].title}</span>
+            <span class="lang-es">{es.approach.items[i].title}</span>
+          </h3>
+          <p class="text-muted text-sm leading-relaxed">
+            <span class="lang-en">{en.approach.items[i].description}</span>
+            <span class="lang-es">{es.approach.items[i].description}</span>
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .approach-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+  }
+</style>

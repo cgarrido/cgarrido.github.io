@@ -2,6 +2,7 @@ export const es = {
   nav: {
     about: "Sobre mí",
     experience: "Experiencia",
+    projects: "Proyectos",
     skills: "Habilidades",
     certifications: "Certificaciones",
     contact: "Contacto",
@@ -9,16 +10,40 @@ export const es = {
   hero: {
     greeting: "Hola, soy",
     name: "Cristian Garrido Méndez",
-    title: "Arquitecto de Software · Especialista .NET",
-    tagline: "Construyendo sistemas distribuidos escalables con .NET 10, DDD, Docker y Azure.",
+    title: "Ingeniero de Software · .NET y Sistemas Distribuidos",
+    tagline: "Ayudo a los equipos a diseñar, probar y entregar sistemas .NET fiables sobre Azure, de la arquitectura a producción.",
     cta: "Ver mi trabajo",
+    ctaContact: "Hablemos",
   },
   about: {
     title: "Sobre mí",
     paragraphs: [
-      "Ingeniero de software con más de 10 años de experiencia desarrollando aplicaciones web empresariales y sistemas distribuidos sobre el ecosistema Microsoft.",
-      "Actualmente enfocado en arquitectura de software: diseño de APIs modulares con Domain-Driven Design (DDD), EF Core y .NET 10, Docker Compose para orquestación local y Azure Pipelines (YAML) para CI/CD.",
-      "Implemento stacks de observabilidad completos — Grafana, Loki, Promtail, Prometheus — para que los equipos desplieguen con confianza. Creo que infraestructura y arquitectura son inseparables.",
+      "Ingeniero de software con más de 12 años de experiencia desarrollando aplicaciones web empresariales y sistemas distribuidos sobre el ecosistema Microsoft.",
+      "Actualmente responsable de la arquitectura, la calidad y el despliegue de una familia de productos sobre una plataforma .NET 10 compartida: APIs modulares con Domain-Driven Design (DDD), EF Core, Elasticsearch y RabbitMQ, entregadas con Azure Pipelines, Docker y Terraform.",
+      "Me importa cómo entregan los equipos: políticas de ramas, revisión de código, TDD estricto, tests de arquitectura y stacks de observabilidad completos — Grafana, Loki, Promtail, Prometheus. Creo que infraestructura y arquitectura son inseparables.",
+      "También construyo herramientas para ingeniería asistida por IA, como un servidor MCP que coordina agentes de código y automatiza el flujo de tareas de Azure DevOps.",
+    ],
+  },
+  approach: {
+    title: "Qué Aporto",
+    subtitle: "Cómo trabajo con los equipos, desde la primera decisión de diseño hasta una release monitorizada en producción.",
+    items: [
+      {
+        title: "Arquitectura que sigue siendo mantenible",
+        description: "Domain-driven design, arquitectura limpia y hexagonal, y APIs modulares con límites claros. Las reglas de capas se verifican con tests de arquitectura, así el diseño aguanta el crecimiento del equipo.",
+      },
+      {
+        title: "Calidad integrada desde el principio",
+        description: "Desarrollo guiado por tests con pruebas unitarias centradas en comportamiento, pruebas de integración contra un stack real, pruebas de carga y comprobaciones end-to-end dentro del pipeline.",
+      },
+      {
+        title: "Entregas en las que se puede confiar",
+        description: "Pipelines como código, servicios en contenedores, infraestructura en Terraform, migraciones de base de datos como etapa del pipeline, aprobaciones manuales donde el riesgo es real y observabilidad desde el primer día.",
+      },
+      {
+        title: "Prácticas que escalan con el equipo",
+        description: "Políticas de ramas, revisión de pull requests, convenciones y decisiones documentadas, y flujos asistidos por IA con barreras de seguridad para que la velocidad no cueste calidad.",
+      },
     ],
   },
   experience: {
@@ -28,8 +53,15 @@ export const es = {
         period: "Jun 2025 – Presente",
         company: "The BigTech Experience",
         role: "Ingeniero de Software",
-        description: "Trabajo con tecnologías .NET en sistemas de software a gran escala.",
-        tags: [".NET"],
+        description: "Responsable técnico de una familia de productos construidos sobre una plataforma .NET 10 compartida.",
+        bullets: [
+          "Tomo las decisiones de arquitectura, infraestructura y despliegue de varios productos sobre una plataforma compartida (DDD, APIs modulares, servicios core distribuidos como paquetes NuGet).",
+          "Lideré el producto Recruitment de principio a fin (backend, QA y despliegue), colaborando en su frontend Blazor; misma responsabilidad de backend, QA y despliegue en el resto de productos.",
+          "Diseñé el CI/CD en Azure Pipelines con Docker Compose y Azure Container Apps, infraestructura en Terraform, aprobaciones manuales y rollbacks por tag de imagen.",
+          "Definí las políticas de ramas y la revisión de PRs; garantizo la calidad con TDD estricto, tests de arquitectura, pruebas de carga con k6 y E2E con Playwright.",
+          "Creé un servidor MCP interno que coordina agentes de código con IA y automatiza el flujo de tareas de Azure DevOps.",
+        ],
+        tags: [".NET 10", "DDD", "Azure DevOps", "Terraform", "Docker", "Elasticsearch", "RabbitMQ", "TDD"],
       },
       {
         period: "Ene 2024 – Mar 2025",
@@ -75,6 +107,55 @@ export const es = {
       },
     ],
   },
+  projects: {
+    title: "Proyectos",
+    subtitle: "Backend, QA y despliegue en toda la familia de productos (Berrymony es full-stack). Se omiten intencionadamente los datos de clientes.",
+    items: [
+      {
+        name: "Plataforma Compartida",
+        role: "Backend · QA · Despliegue",
+        description: "Plataforma .NET 10 compartida con servicios de autenticación, adjuntos, notificaciones y B2B. Las librerías core y los contratos se publican como paquetes NuGet y los servicios como imágenes Docker, consumidos por todos los productos.",
+        tags: [".NET 10", "DDD", "NuGet", "RabbitMQ", "Azure Service Bus", "SignalR"],
+      },
+      {
+        name: "Plataforma de Recruitment",
+        role: "Backend · QA · Despliegue",
+        description: "Plataforma para agencias de selección con candidatos, ofertas y paneles. Frontend Blazor WASM, contextos acotados de Auth y Recruitment y entrega completa basada en Docker.",
+        tags: ["Blazor", ".NET 10", "SQL Server", "Elasticsearch", "Redis", "Playwright"],
+      },
+      {
+        name: "Plataforma de Búsqueda",
+        role: "Backend · QA · Despliegue",
+        description: "Plataforma de búsqueda de alto rendimiento con Clean Architecture y CQRS, Elasticsearch, API pública con API key y rate limiting, Azure Functions para sincronización de feeds y analítica, y Azure Container Apps provisionado con Terraform.",
+        tags: ["Elasticsearch", "Azure Functions", "Container Apps", "Terraform", "Service Bus"],
+      },
+      {
+        name: "Plataforma de Fidelización y CRM",
+        role: "Backend · QA · Despliegue",
+        description: "Backend de fidelización con tarjetas de cliente, promociones y campañas, pases de Apple y Google Wallet, y workers en segundo plano para transacciones y envío de campañas.",
+        tags: [".NET 10", "MongoDB", "RabbitMQ", "Azure Key Vault", "Terraform"],
+      },
+      {
+        name: "Comercio B2B Multi-partner",
+        role: "Backend · QA · Despliegue",
+        description: "Prueba de concepto de plataforma de comercio con una celda Medusa por partner, servicios .NET compartidos, storefront en Next.js, asistente de presupuestos con IA y despliegues progresivos con rollback.",
+        tags: ["Medusa", ".NET 10", "Next.js", "PostgreSQL", "k6", "Docker Compose"],
+      },
+      {
+        name: "Berrymony",
+        role: "Creador · Full-stack",
+        description: "Plataforma multilingüe en producción donde cada boda tiene su propia web, subida de fotos de invitados, álbumes, confirmaciones (RSVP) y pagos. Arquitectura: dos servicios .NET independientes (Auth y Weddings) con Clean Architecture, CQRS propio y reglas de capas verificadas con tests de arquitectura, más procesado de fotos orientado a eventos con Azure Functions y Event Grid. Entrega: trabajo planificado como backlog de Epic a Task en Azure DevOps e integrado con ramas cortas y pull requests; un único pipeline ejecuta lint y tests, construye imágenes, planifica la infraestructura con Terraform, exige aprobación manual antes del apply, y después ejecuta migraciones de base de datos y despliega en Azure Container Apps tras Front Door.",
+        tags: ["Next.js", ".NET 10", "Container Apps", "Azure Functions", "Front Door", "Terraform", "Stripe", "SignalR"],
+        url: "https://berrymony.com",
+      },
+      {
+        name: "Servidor de Coordinación de Agentes IA",
+        role: "Creador",
+        description: "Servidor MCP que permite a varios agentes de Claude Code compartir un repositorio: reserva de áreas, mensajería y un orquestador que asigna tareas de Azure DevOps, sigue las pull requests y actualiza la wiki.",
+        tags: ["TypeScript", "MCP", "SQLite", "Azure DevOps API", "Docker"],
+      },
+    ],
+  },
   skills: {
     title: "Habilidades",
     groups: [
@@ -89,6 +170,18 @@ export const es = {
       {
         label: "Cloud e Infraestructura",
         items: ["Microsoft Azure", "Azure Pipelines", "Docker", "Docker Compose", "Kubernetes", "Terraform", "AWS"],
+      },
+      {
+        label: "Datos y Mensajería",
+        items: ["SQL Server", "Elasticsearch", "RabbitMQ", "Azure Service Bus", "MongoDB", "Redis"],
+      },
+      {
+        label: "Calidad y Liderazgo",
+        items: ["TDD estricto", "Tests de Arquitectura", "Pruebas de carga con k6", "Playwright", "Revisión de código", "Políticas de ramas"],
+      },
+      {
+        label: "Ingeniería asistida por IA",
+        items: ["Claude Code", "Servidores MCP", "Orquestación de agentes"],
       },
       {
         label: "Observabilidad",
@@ -125,7 +218,7 @@ export const es = {
   },
   contact: {
     title: "Contacto",
-    subtitle: "Disponible para consultoría de arquitectura, roles senior .NET y oportunidades de ponente.",
+    subtitle: "Abierto a roles senior .NET y a consultoría de arquitectura y entrega. Cuéntame tu proyecto y vemos si encajo.",
     email: "cristiangarrido1989@gmail.com",
     linkedin: "linkedin.com/in/cristiangarridomendez",
     github: "github.com/cgarrido",
